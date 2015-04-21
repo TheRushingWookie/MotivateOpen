@@ -1,0 +1,9 @@
+{% extends "base_templates/page_base.html" %}  {# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block content %}
+<h1>All your tasks</h1>
+
+{% for task in tasks %}
+    <p> {{task}} <a href="{{url_for('edit_task', task=task.id)}}"> Edit </a></p> 
+{% endfor %}
+{% endblock %}

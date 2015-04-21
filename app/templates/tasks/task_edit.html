@@ -1,0 +1,21 @@
+{% extends "base_templates/page_base.html" %}  {# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block content %}
+<h1>Edit a task</h1>
+
+{% from "base_templates/form_macros.html" import render_field, render_submit_field , render_radio_field%}
+<form action="" method="POST" class="form" role="form">
+  <div class="row">
+    <div class="col-sm-6 col-md-5 col-lg-4">
+    {{ form.hidden_tag() }}
+    <p> Delete this task? {{ render_radio_field(form.delete)}} </p>
+
+    {{ render_field(form.cost)}}
+    {{ render_field(form.repeat_frequency, tabindex=250) }}
+
+    {{ render_submit_field(form.submit, tabindex=280) }}
+    </div>
+  </div>
+</form>
+
+{% endblock %}

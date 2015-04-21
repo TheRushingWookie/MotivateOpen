@@ -1,0 +1,17 @@
+{% extends "base_templates/page_base.html" %}  {# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block content %}
+<h1>Overdue Tasks</h1>
+
+{% for task in tasks %}
+    <p> {{task}} </p>
+{% endfor %}
+<h1>Good reports</h1>
+{% for report in good_reports %}
+    <p> {{report}} </p>
+{% endfor %}
+<h1>Bad Reports</h1>
+{% for report in bad_reports %}
+    <p> {{report}} </p>
+{% endfor %}
+{% endblock %}

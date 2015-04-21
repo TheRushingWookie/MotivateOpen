@@ -1,0 +1,7 @@
+{% extends "flask_user/emails/base_message.txt" %}
+
+{% block message %}
+Hey! You've got a task due today!
+Click the link below to send in a report and make sure you keep your cash!
+{{ report_link }}
+{% endblock %}

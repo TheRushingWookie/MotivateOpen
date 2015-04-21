@@ -1,0 +1,14 @@
+{% extends "base_templates/page_base.html" %}  {# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block content %}
+<h1>Pay through Stripe</h1>
+
+{% from "base_templates/form_macros.html" import render_field, render_submit_field %}
+<form action="" method="POST" class="form" role="form">
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ key }}"
+            data-description="A Flask Charge"
+            data-amount="000"></script>
+</form>
+
+{% endblock %}

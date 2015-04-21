@@ -1,0 +1,48 @@
+{% extends 'flask_user/public_base.html' %}
+{% block content %}
+{% from "flask_user/_macros.html" import render_field, render_submit_field %}
+{% if current_user.is_authenticated() %}
+
+<p><a href="{{ url_for('user_profile_page') }}">Edit Profile</a>
+</p>
+<p><a href="{{ url_for('user.logout') }}">Sign out</a>
+</p>
+<center>
+    <h1>Streak | {{streak}}</h1>
+</center>
+
+
+<p>&nbsp;&nbsp;&nbsp;</p>
+<center>
+    <h1>Due Today</h1>
+    {% for task in tasks_today %}
+    <p>{{task.name}} is due today! Make a <a href="{{ url_for('create_report', task=task.name) }}">report</a>!</p>
+    {% endfor %}
+
+    <h1>Due Tomorrow</h1>
+    {% for task in tasks_tomorrow %}
+    <p>{{task}}</p>
+    {% endfor %}
+</center>
+</div>
+{% else %}
+  <center><img style="height:auto; width:auto; max-width:60%; max-height:100%;" src="/static/app/motivate_logo.png"></center>
+                <blockquote>
+                    <p>Get stuff done once and for all</p>
+                </blockquote>
+                Need something to help stop procrastinating? We've got your back.
+                Motivate is designed to be simple but brutal on procrastination.
+                You make tasks and send reports. The report is read by one of our
+                human helpers and if its legit, then congrats, you've got work done.
+                <br>
+                <br>
+                Sounds too easy right?
+                There's a twist: if you fail to send a report or send a funky report you lose money.
+                That's it. We've found that giving people a monetary
+                punishment is the best way to stop procrastination.
+                
+                <br>
+                <br>You can stop or pause a task at anytime.
+</div>
+{% endif %} 
+{% endblock %}

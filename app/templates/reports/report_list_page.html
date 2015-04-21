@@ -1,0 +1,9 @@
+{% extends "base_templates/page_base.html" %}  {# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block content %}
+<h1>Tasks</h1>
+
+{% for report in reports %}
+    <p> {{report}} </p>
+{% endfor %}
+{% endblock %}

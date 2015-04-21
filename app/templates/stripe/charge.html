@@ -1,0 +1,9 @@
+{% extends "base_templates/page_base.html" %}  {# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block content %}
+<h1>User Profile</h1>
+
+{% from "base_templates/form_macros.html" import render_field, render_submit_field %}
+  <h2>Thanks, you paid <strong>{{ amount }}</strong>!</h2>
+
+{% endblock %}

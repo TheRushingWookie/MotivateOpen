@@ -1,0 +1,7 @@
+{% extends "flask_user/emails/base_message.html" %}
+
+{% block message %}
+<p>Hey! You've got a task due today!</p>
+<p>Click the link below to send in a report and make sure you keep your cash!</p>
+<p><a href="{{ report_link }}">Send a report</a>.</p>
+{% endblock %}

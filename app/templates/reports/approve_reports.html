@@ -1,0 +1,26 @@
+{% extends "base_templates/page_base.html" %}  {# base_templates/page_base.html extends base_templates/base.html #}
+
+{% block content %}
+<h1>Tasks to be approved</h1>
+
+{% from "base_templates/form_macros.html" import render_field, render_submit_field, render_radio_field %}
+<style>
+.col{
+	margin-left: 10%
+}
+</style>
+<p > Approved|Rejected </p>
+<form action="" method="post">
+
+    {% for report_id, report_name, content in fv %}
+
+	<div > 		 	
+	<input type="checkbox" id="{{report_id}}" name="{{report_id}}|approved"  value="1" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="checkbox" id="{{report_id}}" name="{{report_id}}|rejected"  value="1" />
+	 	Task {{ report_name }} : {{ content }}
+	 	</div> 
+	{% endfor %}
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}
