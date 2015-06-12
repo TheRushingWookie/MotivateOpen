@@ -8,6 +8,7 @@ Sounds too easy right? There's a twist: if you fail to send a report or send a f
 
 You can stop or pause a task at anytime.
 
+
 ## Installation
 Download and run 
 	pip install -r requirements.txt
