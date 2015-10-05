@@ -19,4 +19,4 @@ from werkzeug.contrib.fixers import ProxyFix
 
 app.wsgi_app = ProxyFix(app.wsgi_app)
 if __name__ == 'main' or __name__ == "__main__":
-	app.run(debug=True, port=4000)
+	app.run(debug=False, port=4000)
